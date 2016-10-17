@@ -6,7 +6,7 @@ COPY ./cuda_files /usr/local/src/cuda_files
 
 
 ## Only install toolkit, skipping drivers
-RUN wget --directory-prefix=/usr/local/src/cuda_files https://developer.nvidia.com/compute/cuda/8.0/prod/local_installers/cuda_8.0.44_linux-run 
+RUN wget -q --directory-prefix=/usr/local/src/cuda_files https://developer.nvidia.com/compute/cuda/8.0/prod/local_installers/cuda_8.0.44_linux-run 
 
 RUN sh /usr/local/src/cuda_files/cuda_8.0.44_linux-run --tmpdir=/tmp/ --toolkit  -silent
 RUN rm -rf /tmp/*
