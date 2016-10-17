@@ -16,8 +16,11 @@ RUN cp /usr/local/src/cuda_files/cudnn5.1/cuda/include/* /usr/local/cuda/include
 RUN cp /usr/local/src/cuda_files/cudnn5.1/cuda/lib64/* /usr/local/cuda/lib64/.
 
 ## Expose CUDA DIR
-RUN export PATH=/usr/local/cuda/bin:$PATH
-RUN export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+ENV PATH=/usr/local/cuda/bin:$PATH
+ENV LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+
+#RUN export PATH=/usr/local/cuda/bin:$PATH
+#RUN export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
 
 
