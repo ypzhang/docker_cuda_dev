@@ -20,10 +20,11 @@ RUN rm -rf /tmp/*
 # Copy cudnn 5.1 to CUDA toolkit 
 RUN cp /usr/local/src/cuda_files/cudnn5.1/cuda/include/* /usr/local/cuda/include/.
 RUN cp /usr/local/src/cuda_files/cudnn5.1/cuda/lib64/* /usr/local/cuda/lib64/.
+RUN rm -rf /usr/local/src/cuda_files
 
 ### Expose CUDA DIR
-#ENV PATH=/usr/local/cuda/bin:$PATH
-#ENV LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+ENV PATH=/usr/local/cuda/bin:$PATH
+ENV LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
 
 
